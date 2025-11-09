@@ -1,6 +1,8 @@
+// src/domain/Item.js
 export class Item {
-    constructor(nome, preco) {
-        this.nome = nome;
-        this.preco = preco;
+    constructor({ name, price, quantity }) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
     }
 }

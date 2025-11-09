@@ -1,7 +1,7 @@
 import { Pedido } from '../domain/Pedido.js';
 
 export class CheckoutService {
-    
+
     // Injeção de Dependência via construtor
     constructor(gateway, repository, emailSvc) {
         this.gatewayPagamento = gateway;
@@ -14,7 +14,7 @@ export class CheckoutService {
         let totalFinal = totalInicial;
 
         // 1. Regra de negócio: Desconto para Premium
-        if (carrinho.user.isPremium()) {
+        if (carrinho.user && carrinho.user.isPremium()) {
             totalFinal = totalInicial * 0.90;
         }
 

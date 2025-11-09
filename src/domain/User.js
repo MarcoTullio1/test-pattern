@@ -1,12 +1,13 @@
+// src/domain/User.js
 export class User {
-    constructor(id, nome, email, tipo = 'PADRAO') {
+    constructor({ id, name, email, type = 'STANDARD' }) {
         this.id = id;
-        this.nome = nome;
+        this.name = name;
         this.email = email;
-        this.tipo = tipo; // 'PADRAO' ou 'PREMIUM'
+        this.type = type;
     }
 
     isPremium() {
-        return this.tipo === 'PREMIUM';
+        return this.type === 'PREMIUM';
     }
 }

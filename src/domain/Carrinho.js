@@ -1,10 +1,11 @@
+// src/domain/Carrinho.js
 export class Carrinho {
-    constructor(user, itens = []) {
+    constructor({ user, items = [] }) {
         this.user = user;
-        this.itens = itens;
+        this.items = items;
     }
 
     calcularTotal() {
-        return this.itens.reduce((total, item) => total + item.preco, 0);
+        return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
     }
 }
